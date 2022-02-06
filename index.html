@@ -21,11 +21,18 @@
 		<template x-for="section in sections">
 			<div class="column">
 				<div class="hero is-fullheight" x-bind:class="section.type">
-					<div class="hero-body">
+					<div class="hero-body is-align-items-flex-start">
 						<div class="is-block">
-							<h2 class="title is-1" x-text="section.title"></h2>
-							<p x-text="section.description"></p>
+							<figure class="image is-128x128">
+								<img x-bind:src="section.icon" x-bind:alt="section.title" />
+							</figure>
+							<h2 class="title is-1 mb-4" x-text="section.title"></h2>
+							<p x-html="section.description"></p>
 						</div>
+					</div>
+
+					<div class="hero-foot">
+						<a x-bind:href="section.link" target="_blank" class="button section-button is-light is-block is-large" x-bind:class="section.type">👉</a>
 					</div>
 				</div>
 			</div>

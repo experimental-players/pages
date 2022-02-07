@@ -5,16 +5,16 @@ const sections = [
 	{
 		title: 'Spotify',
 		description: 'Una fantastica playlist che raccoglie tutti i gusti musicali degli <b>Experimental Players</b>!',
-		link: '#',
+		link: '',
 		icon: ICONS_BASE_URL + '/Spotify.png',
-		type: "is-success"
+		type: "is-success is-bold"
 	},
 	{
 		title: 'Hub',
 		description: '<i>Coming Soon!</i>',
-		link: 'https://hub.experimentalplayers.org',
+		link: '',
 		icon: ICONS_BASE_URL + '/Hub.png',
-		type: "is-warning"
+		type: "is-dark is-bold"
 	},
 	{
 		title: 'Shop',

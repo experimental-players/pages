@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Experimental Players</title>
-	<link rel="icon" type="image/png" href="https://static.experimentalplayers.org/logo.png" />
-	
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Experimental Players</title>
+        <link href="https://static.experimentalplayers.org/logo.png" rel="icon" type="image/png"/>
 
-	<script src="//unpkg.com/alpinejs" defer></script>
-	<script src="js/data.js"></script>
-</head>
-<body>
-	<div class="columns is-gapless" x-data="sections">
-		<template x-for="section in sections">
-			<div class="column">
-				<div class="hero is-fullheight" x-bind:class="section.type">
-					<div class="hero-body is-align-items-flex-start">
-						<div class="is-block">
-							<figure class="image is-128x128">
-								<img x-bind:src="section.icon" x-bind:alt="section.title" />
-							</figure>
-							<h2 class="title is-1 mb-4" x-text="section.title"></h2>
-							<p x-html="section.description"></p>
-						</div>
-					</div>
+        <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com" rel="preconnect">
+        <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-					<div class="hero-foot">
-						<a x-bind:href="section.link" target="_blank" class="button section-button is-light is-block is-large" x-bind:class="section.type">👉</a>
-					</div>
-				</div>
-			</div>
-		</template>
-	</div>
-</body>
+        <script defer src="//unpkg.com/alpinejs"></script>
+        <script src="js/data.js"></script>
+    </head>
+    <body>
+        <div class="hero is-fullheight waves">
+            <div class="hero-body">
+                <div class="columns is-vcentered is-2" x-data="sections">
+                    <template x-for="section in sections">
+                        <div class="column">
+                            <div class="app box py-2 px-4" x-bind:class="section.type">
+                                <div class=" is-align-items-flex-start">
+                                    <div class="is-block">
+                                        <figure class="icon image is-128x128 mb-4">
+                                            <img x-bind:alt="section.title" x-bind:src="section.icon"/>
+                                        </figure>
+                                        <h2 class="title is-1 mb-4" x-text="section.title"></h2>
+                                        <p x-html="section.description"></p>
+                                    </div>
+                                </div>
+								
+								<template x-if="section.link">
+									<div class="mt-6 cta">
+										<a class="button is-light" target="_blank" x-bind:href="section.link">👉</a>
+									</div>
+								</template>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+    </body>
 </html>
